@@ -112,11 +112,8 @@ To automate the deployment of your Flask application using GitHub Actions, you n
 3.  **Add Secrets:**
     
     -   Under the "Security" section, click on "Secrets and variables" and then select "Actions".
-    -   Click the "New repository secret" button to add a new secret.
-4.  **Add the Following Secrets:**
-    
-    -   **AZURE_WEBAPP_PUBLISH_PROFILE**: Paste the entire XML content of your Azure Web App publishing profile obtained from the previous step.
-    -   **AZURE_WEBAPP_NAME**: Add the name of your Azure Web App, for example, `flask-testing-env`.
+    -   Click the "New repository secret" button and  add a new secret.
+4.  
 
 Adding these secrets will allow GitHub Actions to access your Azure Web App credentials securely, enabling continuous deployment of your application.
 
@@ -128,7 +125,7 @@ Now, create a GitHub Actions workflow file to automate the deployment of your Fl
     
 2.  **Create Workflow File:** In the `.github/workflows` directory, create a new file named `deploy.yml`.
     
-3.  **Define the Workflow:** Add the following content to the `deploy.yml` file:
+3.  **Define the Workflow:** :
 
 ```bash
 

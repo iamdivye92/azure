@@ -2,15 +2,6 @@
 This project deploys a simple Flask API to an Azure Web App using GitHub Actions. It automates the build and deployment process, ensuring that updates are automatically pushed to Azure whenever changes are made to the code. The workflow simplifies continuous integration and deployment for the Flask application.
 
 
-
-
-- **Secrets and Variables**: Basic knowledge of handling secrets and environment variables.
-- **Cloud Service Access**: Access to a cloud service and a text editor or IDE.
-- **Web Browser**: For accessing project repositories and references.
-
-
-## Workflow Overview
-
 ### **Workflow Overview**
 
 This workflow automates the deployment of a Flask API to Azure Web App using GitHub Actions. When changes are pushed to the main branch of the GitHub repository, the workflow is triggered. It first sets up the Python environment and installs the necessary dependencies. The Flask API is then packaged and prepared for deployment. The application is deployed to the Azure Web App using the publish profile, and finally, the deployment status is checked to ensure the app is running correctly. This process facilitates continuous integration and deployment, ensuring automated updates and maintenance for the Flask application.
@@ -54,7 +45,7 @@ az group create --name <YourResourceGroupName> --location <YourRegion>
 
 
 
-### **Step 4 : Create an App Service Plan**
+### **Step 3 : Create an App Service Plan**
 
 Use the Azure CLI to create an App Service Plan, which defines the region and pricing tier for your Azure Web App. Replace `<YourAppServicePlanName>` with your desired plan name and `<YourResourceGroupName>` with your resource group name. 
 
@@ -69,7 +60,7 @@ az appservice plan create --name <YourAppServicePlanName> --resource-group <Your
 --is-linux: Uses a Linux environment.
 --location westeurope: Defines the Azure region.
 
-## STEP 6 Create a Web App
+## STEP 4 Create a Web App
 
 Use the Azure CLI to create a Web App within the App Service Plan. Replace `<YourWebAppName>`, `<YourResourceGroupName>`, `<YourAppServicePlanName>`, and `<YourRegion>` with your chosen values:
 
@@ -101,7 +92,7 @@ az webapp deployment list-publishing-profiles --name <YourWebAppName> --resource
 
 
 
-### **Step 8: Configure GitHub Repository with Deployment Credentials**
+### **Step 5: Configure GitHub Repository with Deployment Credentials**
 
 To automate the deployment of your Flask application using GitHub Actions, you need to add the deployment credentials from Azure to your GitHub repository as secrets.
 
@@ -117,7 +108,7 @@ To automate the deployment of your Flask application using GitHub Actions, you n
 
 Adding these secrets will allow GitHub Actions to access your Azure Web App credentials securely, enabling continuous deployment of your application.
 
-### **Step 9: Create a GitHub Actions Workflow File**
+### **Step 6: Create a GitHub Actions Workflow File**
 
 Now, create a GitHub Actions workflow file to automate the deployment of your Flask application to Azure. Follow these steps to set up the workflow:
 
@@ -165,7 +156,7 @@ jobs:
 
 
 
-### Step Nine
+### Step 7
 To access the URL of your deployed Azure Web App from the Azure CLI without specifying the app name and resource group, you can use the following command:
 ```bash
 az webapp show --name <YourWebAppName> --resource-group <YourResourceGroup> --query defaultHostName --output tsv

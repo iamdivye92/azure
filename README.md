@@ -165,11 +165,8 @@ jobs:
 ```      
 
 
-Here’s the explanation using Markdown syntax:
 
-----------
 
-----------
 
 ### Step Nine
 To access the URL of your deployed Azure Web App from the Azure CLI without specifying the app name and resource group, you can use the following command:

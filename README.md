@@ -169,26 +169,6 @@ Here’s the explanation using Markdown syntax:
 
 ----------
 
-### Explanation of GitHub Actions Workflow
-
-1.  **Workflow Name**:  
-    Specifies the workflow's name as "Deploy Flask App to Azure," indicating its purpose.
-    
-2.  **Trigger Event**:  
-    The workflow is triggered by a `push` event to the `main` branch of the repository.
-    
-3.  **Job Definition (`build-and-deploy`)**:  
-    Defines a job that runs on an `ubuntu-latest` runner.
-    
-4.  **Steps**:
-    
-    -   **Checkout Code**: Clones the repository to the runner using `actions/checkout@v2`.
-    -   **Set Up Python**: Installs Python 3.9 on the runner with `actions/setup-python@v2`.
-    -   **Install Dependencies**: Upgrades `pip` and installs dependencies from `requirements.txt`.
-    -   **Deploy to Azure Web App**: Deploys the Flask app to Azure using `azure/webapps-deploy@v2` with Azure Web App name and publish profile from GitHub secrets.
-
-This workflow automates the deployment of a Flask app to Azure upon each push to the main branch.
-
 ----------
 
 ### Step Nine

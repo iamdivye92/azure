@@ -5,28 +5,14 @@ This project deploys a simple Flask API to an Azure Web App using GitHub Actions
 # Prerequisites
 
 - **Azure Subscription**: An active Azure subscription to create and manage resources.
-- **GitHub Repository**: A GitHub repository with your Flask API code.
 - **Azure CLI**: Installed and configured on your local machine.
-- **GitHub Account**: Familiarity with GitHub Actions for automating deployment workflows.
-
-- **Secrets and Variables**: Basic knowledge of handling secrets and environment variables.
-- **Cloud Service Access**: Access to a cloud service and a text editor or IDE.
-- **Web Browser**: For accessing project repositories and references.
-
-
-## Workflow Overview
-
-### **Workflow Overview**
-
-This workflow automates the deployment of a Flask API to Azure Web App using GitHub Actions. When changes are pushed to the main branch of the GitHub repository, the workflow is triggered. It first sets up the Python environment and installs the necessary dependencies. The Flask API is then packaged and prepared for deployment. The application is deployed to the Azure Web App using the publish profile, and finally, the deployment status is checked to ensure the app is running correctly. This process facilitates continuous integration and deployment, ensuring automated updates and maintenance for the Flask application.
 
 
 ## Workflow Steps
-### **Step 1: Create a Basic Flask API**
 
 ### **Step 1: Create a Basic Flask API**
 
-Start by setting up a simple Flask API. Create a new directory for your project and inside it, set up a Python virtual environment. Install Flask and create a file named `app.py` with the following code:
+Start by setting up a simple Flask API. 
 
 ```
 from flask import Flask
@@ -47,20 +33,15 @@ Additionally, create a `requirements.txt` file to list your project's dependenci
 
 
  
-### **Step 2: Push the Code to GitHub**
 
-Create a new repository on GitHub to store your Flask API code. Then, push the code from your local project directory to this repository. Initialize Git in your project directory, add and commit your files, and push them to the GitHub repository .
-      
-### **Step 3: Install Azure CLI**
+### **Step 2: Install Azure CLI**
 
 Download and install the Azure CLI from the [official Microsoft website](https://learn.microsoft.com/en-us/cli/azure/). Follow the installation instructions for your operating system. After installation, open your command line or terminal and log in to your Azure account using:
 
-```bash
-az login
-```
+
 ### **Step 4: Create a Resource Group**
 
-Use the Azure CLI to create a new resource group. This group will contain all the resources for your Azure Web App. Replace `<YourResourceGroupName>` with your desired resource group name and `<YourRegion>` with the Azure region where you want to create the resource group:
+Use the Azure CLI to create a new resource group. This group will contain all the resources for your Azure Web App. Replace :
 
 ```bash
 az group create --name <YourResourceGroupName> --location <YourRegion>
